@@ -30,10 +30,11 @@ It serves as a portfolio to showcase coursework, projects, and applied data anal
 
 ## Repository Structure
 
+```
 zhaoshuti.github.io/
-├── index.html # Main website homepage
-└── README.md # Project documentation
-
+├── index.html      # Main website homepage
+└── README.md       # Project documentation
+```
 
 ---
 
