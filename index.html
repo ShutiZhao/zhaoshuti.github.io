@@ -1,115 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Shuti Zhao</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuti Zhao | PPOL 5206 Portfolio</title>
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.7;
-      color: #222;
-    }
+    <style>
+        :root {
+            --primary-color: #041E42;
+            --secondary-color: #63666A;
+            --accent-color: #0076A8;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #333333;
+        }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    h2 {
-      margin-top: 50px;
-      font-size: 1.6rem;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 6px;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
 
-    nav {
-      margin: 25px 0 40px;
-    }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+        }
 
-    nav a {
-      margin-right: 20px;
-      text-decoration: none;
-      color: #0366d6;
-      font-weight: 500;
-    }
+        header h1 {
+            font-size: 2.6rem;
+            margin-bottom: 10px;
+        }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
 
-    section {
-      margin-bottom: 50px;
-    }
+        nav {
+            background-color: var(--primary-color);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    ul {
-      padding-left: 20px;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
 
-    footer {
-      margin-top: 80px;
-      font-size: 0.9rem;
-      color: #666;
-      border-top: 1px solid #eee;
-      padding-top: 20px;
-    }
-  </style>
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .about-content,
+        .contact-info {
+            background: var(--card-background);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card-content {
+            padding: 20px;
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            color: var(--accent-color);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .coming-soon {
+            border: 2px dashed var(--secondary-color);
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            color: var(--secondary-color);
+            background: var(--card-background);
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            padding: 10px 20px;
+            background: var(--background-color);
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .contact-links a:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <h1>Shuti Zhao</h1>
-  <p>Data Science for Public Policy · Aspiring Tech Professional</p>
+<header>
+    <h1>Shuti Zhao</h1>
+    <p>MS in Data Science for Public Policy · Georgetown University</p>
+</header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      I am a graduate student in Data Science for Public Policy.
-      I graduated from the <strong>University of California, Santa Barbara (UCSB)</strong>,
-      where I majored in <strong>History and Sociology</strong>.
-      My undergraduate training gave me a strong foundation in social analysis,
-      institutions, and long-term structural change.
-    </p>
-
-    <p>
-      During my master’s program, I transitioned into data science and developed
-      technical skills in programming, statistics, and applied machine learning.
-      I am interested in using data-driven approaches to understand complex systems
-      and solve real-world problems, and I plan to pursue a career in a
-      <strong>technology firm</strong> after graduation.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
+<nav>
     <ul>
-      <li>EV infrastructure and policy analysis using spatial and demographic data</li>
-      <li>Interactive data visualizations for public policy communication</li>
-      <li>Applied machine learning projects in classification and clustering</li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
-  </section>
+</nav>
 
-  <section id="contact">
+<main>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <p>
+            I am a graduate student in the Data Science for Public Policy program at Georgetown University.
+            I graduated from the University of California, Santa Barbara (UCSB), where I majored in
+            <strong>History and Sociology</strong>. My undergraduate training shaped my interest in social
+            systems, institutions, and long-term structural change.
+        </p>
+        <p>
+            During my master’s program, I transitioned into data science and developed technical skills in
+            programming, statistics, and applied machine learning. I am interested in using data-driven
+            approaches to solve real-world problems and plan to pursue a career in a
+            <strong>technology firm</strong> after graduation.
+        </p>
+
+        <div class="skills-list">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Data Visualization</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Tech & Policy</span>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Course Projects</h2>
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <div class="project-card-content">
+                <h3>Lab 1: GitHub Portfolio</h3>
+                <p>
+                    Built and deployed a personal portfolio website using HTML/CSS and GitHub Pages,
+                    practicing Git workflows and version control.
+                </p>
+                <span class="project-link">You are viewing this project</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-card-content">
+                <h3>Lab 2: Coming Soon</h3>
+                <p>Project content will be added after completing Lab 2.</p>
+                <span class="project-link" style="color: var(--secondary-color);">Coming soon</span>
+            </div>
+        </div>
+
+        <div class="coming-soon">
+            More projects will be added as the semester progresses.
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:sz734@georgetown.edu">sz734@georgetown.edu</a></p>
-    <p>GitHub: <a href="https://github.com/ShutiZhao" target="_blank">github.com/ShutiZhao</a></p>
-  </section>
+    <div class="contact-info">
+        <p style="margin-bottom: 20px;">Feel free to reach out for collaboration or questions.</p>
+        <div class="contact-links">
+            <a href="mailto:sz734@georgetown.edu">📧 sz734@georgetown.edu</a>
+            <a href="https://github.com/ShutiZhao" target="_blank">💻 GitHub</a>
+        </div>
+    </div>
+</section>
 
-  <footer>
-    © 2026 Shuti Zhao
-  </footer>
+</main>
+
+<footer>
+    <p>PPOL 5206 · McCourt School of Public Policy · Georgetown University</p>
+    <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.85;">Last updated: January 2026</p>
+</footer>
 
 </body>
 </html>
-
 
